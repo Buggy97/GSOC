@@ -48,7 +48,7 @@ public class MulticastClient
                 ByteArrayInputStream bais = new ByteArrayInputStream(messagePacket.getData());
                 ObjectInputStream oos = new ObjectInputStream(bais);
                 MulticastMessage message = (MulticastMessage) oos.readObject();
-                System.out.printf("%s\t%s [0x%s]\n", new Time(System.currentTimeMillis()), message.getMessage(), message.getChecksumHex());
+                System.out.printf("%s\t%s\n", new Time(System.currentTimeMillis()), message.getMessage());
             }
         } catch(UnknownHostException e)
         {
